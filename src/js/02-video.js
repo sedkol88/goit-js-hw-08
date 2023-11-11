@@ -7,8 +7,8 @@ const playerEl = new Player(iframe);
 //----------------------------------------------------------------------
 const saveTime = throttle(function() {
     // Отримати поточний час відтворення відео
-    playerEl.getCurrentTime().then(function(time) {
-        let videoTime = time;
+    playerEl.getCurrentTime().then(function(seconds) {
+        let videoTime = seconds;
 
         // Зберегти час відтворення відео в локальному сховищі
         localStorage.setItem('videoplayer-current-time', videoTime);
@@ -17,3 +17,10 @@ const saveTime = throttle(function() {
 
 //------------------------------------------------------------------------
 playerEl.on('timeupdate', saveTime);
+
+
+// playerEl.setCurrentTime(localStorage.getItem('videoplayer-current-time')).then(function(seconds) {
+//     // seconds = the actual time that the player seeked to
+// })
+
+playerEl.setCurrentTime(localStorage.getItem('videoplayer-current-time'))
