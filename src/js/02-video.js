@@ -18,9 +18,4 @@ const saveTime = throttle(function() {
 //------------------------------------------------------------------------
 playerEl.on('timeupdate', saveTime);
 
-
-// playerEl.setCurrentTime(localStorage.getItem('videoplayer-current-time')).then(function(seconds) {
-//     // seconds = the actual time that the player seeked to
-// })
-
 playerEl.setCurrentTime(localStorage.getItem('videoplayer-current-time'))
